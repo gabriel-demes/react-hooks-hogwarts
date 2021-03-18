@@ -1,5 +1,6 @@
 const hogs = [
   {
+    id: 1,
     name: 'Babe',
     specialty: 'Being incredibly cute',
     greased: false,
@@ -7,6 +8,7 @@ const hogs = [
     'highest medal achieved': 'bronze'
   },
   {
+    id: 2,
     name: 'Porkchop',
     specialty: 'Making friends',
     greased: true,
@@ -14,6 +16,7 @@ const hogs = [
     'highest medal achieved': 'silver'
   },
   {
+    id: 3,
     name: 'Cherub',
     specialty: 'Flying',
     greased: false,
@@ -21,6 +24,7 @@ const hogs = [
     'highest medal achieved': 'gold'
   },
   {
+    id: 4,
     name: 'Piggy smalls',
     specialty: 'Rapping',
     greased: true,
@@ -28,6 +32,7 @@ const hogs = [
     'highest medal achieved': 'platinum'
   },
   {
+    id: 5,
     name: 'Trouble',
     specialty: 'Racing',
     greased: true,
@@ -35,6 +40,7 @@ const hogs = [
     'highest medal achieved': 'gold'
   },
   {
+    id: 6,
     name: 'Piglet',
     specialty: 'Bravery and friendship',
     greased: false,
@@ -42,6 +48,7 @@ const hogs = [
     'highest medal achieved': 'silver'
   },
   {
+    id: 7,
     name: 'Peppa',
     specialty: 'Being adventurous',
     greased: false,
@@ -49,6 +56,7 @@ const hogs = [
     'highest medal achieved': 'wood'
   },
   {
+    id: 8,
     name: 'Truffle Shuffle',
     specialty: 'Peeling oranges',
     greased: true,
@@ -56,6 +64,7 @@ const hogs = [
     'highest medal achieved': 'gold'
   },
   {
+    id: 9,
     name: 'Bailey',
     specialty: 'Finding truffles',
     greased: false,
@@ -63,6 +72,7 @@ const hogs = [
     'highest medal achieved': 'bronze'
   },
   {
+    id: 10,
     name: 'Galaxy Note',
     specialty: 'Cuddling',
     greased: true,
@@ -70,6 +80,7 @@ const hogs = [
     'highest medal achieved': 'diamond'
   },
   {
+    id: 11,
     name: 'Leggo My Eggo',
     specialty: 'Babysitting',
     greased: true,
@@ -77,6 +88,7 @@ const hogs = [
     'highest medal achieved': 'platinum'
   },
   {
+    id: 12,
     name: 'Augustus Gloop',
     specialty: 'Making friends with ducks',
     greased: true,
