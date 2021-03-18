@@ -15,8 +15,11 @@ import truffle_shuffle from "../assets/truffle_shuffle.jpg";
 import porkers_data from "../porkers_data"
 import Filter from "./Filter"
 import Sort from "./Sort"
+import Form from "./Form"
 
-const hogImages = [babe,porkchop,cherub,piggy_smalls,trouble,piglet,peppa,truffle_shuffle,bailey,galaxy_note, leggo_my_eggo,augustus_gloop]
+const hogImages = {1:babe,2:porkchop,3:cherub,4:piggy_smalls,5:trouble,6:piglet,7:peppa,8:truffle_shuffle,9:bailey,10:galaxy_note, 11:leggo_my_eggo,12:augustus_gloop}
+
+let data = [...porkers_data]
 
 
 const HogList = () => {
@@ -55,13 +58,21 @@ const HogList = () => {
     }
 
     const tiles = () => sortList(filterList(filter)).map(hogInfo => (<HogTile key={hogInfo.id} hogImg={hogImages[hogInfo.id]} hogName={hogInfo.name} hogSpecialty={hogInfo.specialty} hogGreased={hogInfo.greased} hogWeight={hogInfo.weight} hogHMA={hogInfo['highest medal achieved']}/>))
+    
+    let makeNewHog =[]
+    const newHog = hog => {
+        return makeNewHog = [<HogTile hogImg={hog.image} hogName={hog.name} hogSpecialty={hog.specialty} hogGreased={hog.greased} hogWeight={hog.weight} />]}
+    
 
     return (
         <div >
+            <Form newHog={newHog}/>
             <Sort handleSort={handleSort}/>
             <Filter handleFilter={handleFilter} />
+            <br></br><br></br>
             <div className="ui grid container">
                 {tiles()}
+                {makeNewHog}
             </div>
             
         </div>

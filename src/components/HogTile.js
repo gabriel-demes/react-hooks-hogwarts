@@ -12,11 +12,13 @@ const HogTile = (props) => {
     }
     return (
         <div className="ui eight wide column" onClick={handleClick} >
-            <h3>{props.hogName}</h3>
-            <button onClick={handleHide}>{hideCard ? "Show":"Hide"}</button>
-            <div style={{display: hideCard ? "none":"block"}}>
-                <img src={props.hogImg} alt={props.hogName} style={{width:"500px"},{height:"300px"}}></img>
-                {disp ? <HogDescrip specialty={props.hogSpecialty} weight={props.hogWeight} greased={props.hogGreased} hma={props.hogHMA}/> : null }
+            <div className="pigTile">
+                <h3>{props.hogName}</h3>
+                <button onClick={handleHide}>{hideCard ? "Show":"Hide"}</button>
+                <div style={{display: hideCard ? "none":"block"}}>
+                    <img src={props.hogImg} alt={props.hogName} style={{"max-width":"500px"}}></img>
+                    {disp ? <HogDescrip specialty={props.hogSpecialty} weight={props.hogWeight} greased={props.hogGreased} hma={props.hogHMA}/> : null }
+                </div>
             </div>
             
         </div>
