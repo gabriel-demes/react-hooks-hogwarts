@@ -57,10 +57,13 @@ const HogList = () => {
     const tiles = () => sortList(filterList(filter)).map(hogInfo => (<HogTile key={hogInfo.id} hogImg={hogImages[hogInfo.id]} hogName={hogInfo.name} hogSpecialty={hogInfo.specialty} hogGreased={hogInfo.greased} hogWeight={hogInfo.weight} hogHMA={hogInfo['highest medal achieved']}/>))
 
     return (
-        <div>
+        <div >
             <Sort handleSort={handleSort}/>
             <Filter handleFilter={handleFilter} />
-            {tiles()}
+            <div className="ui grid container">
+                {tiles()}
+            </div>
+            
         </div>
     )
 }
