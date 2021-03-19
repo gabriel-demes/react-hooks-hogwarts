@@ -16,7 +16,7 @@ const HogTile = (props) => {
                 <h3>{props.hogName}</h3>
                 <button onClick={handleHide}>{hideCard ? "Show":"Hide"}</button>
                 <div style={{display: hideCard ? "none":"block"}}>
-                    <img src={props.hogImg} alt={props.hogName} style={{"max-width":"500px"}}></img>
+                    <img src={props.hogImg} alt={props.hogName} style={{maxWidth:"500px"}}></img>
                     {disp ? <HogDescrip specialty={props.hogSpecialty} weight={props.hogWeight} greased={props.hogGreased} hma={props.hogHMA}/> : null }
                 </div>
             </div>

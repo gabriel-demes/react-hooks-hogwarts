@@ -17,12 +17,13 @@ import Filter from "./Filter"
 import Sort from "./Sort"
 import Form from "./Form"
 
-const hogImages = {1:babe,2:porkchop,3:cherub,4:piggy_smalls,5:trouble,6:piglet,7:peppa,8:truffle_shuffle,9:bailey,10:galaxy_note, 11:leggo_my_eggo,12:augustus_gloop}
-
-let data = [...porkers_data]
 
 
 const HogList = () => {
+    const hogImages = {"Babe":babe, "Porkchop":porkchop,"Cherub":cherub,"Piggy smalls":piggy_smalls,"Trouble":trouble,"Piglet":piglet,"Peppa":peppa,"Truffle Shuffle":truffle_shuffle,"Bailey":bailey,"Galaxy Note":galaxy_note, "Leggo My Eggo":leggo_my_eggo,"Augustus Gloop":augustus_gloop}
+
+    const [images, setImages] = useState({...hogImages})
+    const [hogs, setHogs] = useState([...porkers_data])
 
     const [filter, setFilter] = useState("")
     const handleFilter = (e) =>{
@@ -32,11 +33,12 @@ const HogList = () => {
     const filterList = () =>{
         switch(filter){
             case "true":
-                return (porkers_data.filter(info => (info.greased == true)));
+                return (hogs.filter(info => (info.greased === true)));
             case "false": 
-                return (porkers_data.filter(info => info.greased === false));
-            case "":
-                return porkers_data;
+                return (hogs.filter(info => info.greased === false));
+            default:
+                return hogs;
+            
         } 
     }
 
@@ -57,11 +59,13 @@ const HogList = () => {
         }
     }
 
-    const tiles = () => sortList(filterList(filter)).map(hogInfo => (<HogTile key={hogInfo.id} hogImg={hogImages[hogInfo.id]} hogName={hogInfo.name} hogSpecialty={hogInfo.specialty} hogGreased={hogInfo.greased} hogWeight={hogInfo.weight} hogHMA={hogInfo['highest medal achieved']}/>))
+
+    const tiles = () => sortList(filterList(filter)).map(hogInfo => (<HogTile key={hogInfo.id} hogImg={images[hogInfo.name]} hogName={hogInfo.name} hogSpecialty={hogInfo.specialty} hogGreased={hogInfo.greased} hogWeight={hogInfo.weight} hogHMA={hogInfo['highest medal achieved']}/>))
     
-    let makeNewHog =[]
     const newHog = hog => {
-        return makeNewHog = [<HogTile hogImg={hog.image} hogName={hog.name} hogSpecialty={hog.specialty} hogGreased={hog.greased} hogWeight={hog.weight} />]}
+        setHogs([...hogs, {id:(hogs.length +1), name:hog.name, specialty:hog.specialty, greased:hog.greased, weight:hog.weight, "highest medal achieved":hog.hma}])
+        setImages({...images, [hog.name]:hog.image})
+        }
     
 
     return (
@@ -72,7 +76,7 @@ const HogList = () => {
             <br></br><br></br>
             <div className="ui grid container">
                 {tiles()}
-                {makeNewHog}
+
             </div>
             
         </div>

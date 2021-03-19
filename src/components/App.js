@@ -3,7 +3,6 @@ import Nav from "./Nav";
 import HogList from "./HogList"
 
 
-import hogs from "../porkers_data";
 
 function App() {
   return (
